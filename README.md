@@ -221,7 +221,7 @@ Untuk fungsi `wrap()`, `fill()`, dan `shorten()` mempunyai opsi tambahan. Adapun
   </tr>
   <tr>
     <td><p align="left"><code>replace_whitespace</code></p></td>
-    <td><p align="left">Jika <code>true</code>, karakter _whitespace_ akan digantikan dengan spasi.</p></td>
+    <td><p align="left">Jika <code>true</code>, karakter <i>whitespace</i> akan digantikan dengan spasi.</p></td>
     <td><p align="center"><code>boolean</code></p></td>
     <td><p align="center"><code>true</code></p></td>
   </tr>
@@ -239,7 +239,7 @@ Untuk fungsi `wrap()`, `fill()`, dan `shorten()` mempunyai opsi tambahan. Adapun
   </tr>
   <tr>
     <td><p align="left"><code>drop_whitespace</code></p></td>
-    <td><p align="left">Jika <code>true</code>, _whitespace_ di awal dan akhir baris akan dihapus.</p></td>
+    <td><p align="left">Jika <code>true</code>, <i>whitespace</i> di awal dan akhir baris akan dihapus.</p></td>
     <td><p align="center"><code>boolean</code></p></td>
     <td><p align="center"><code>true</code></p></td>
   </tr>
