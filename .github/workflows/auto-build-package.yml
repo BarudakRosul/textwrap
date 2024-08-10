@@ -1,0 +1,78 @@
+name: Auto Build All Dependencies and DevDependencies
+on:
+  schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │ ┌───────────── hour (0 - 23)
+    #        │ │  ┌───────────── day of the month (1 - 31)
+    #        │ │  │  ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │ │  │  │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │ │  │  │ │
+    #        │ │  │  │ │
+    #        │ │  │  │ │
+    #        * *  *  * *
+    - cron: "0 0 */7 * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  deployments: read
+  issues: read
+  discussions: read
+  packages: read
+  pages: read
+  pull-requests: write
+  repository-projects: read
+  security-events: read
+  statuses: read
+
+jobs:
+  update-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+      - name: Setup Node
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
+        with:
+          node-version: "22.x"
+          cache: npm
+
+      # Fix the unsafe repo error which was introduced by the CVE-2022-24765 git patches.
+      - name: Fix unsafe repo error
+        run: git config --global --add safe.directory ${{ github.workspace }}
+
+      - name: Run npm install and update
+        run: |
+          npm install
+          npm update --save
+        env:
+          CI: true
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
+
+      - name: Push commit to a new branch
+        run: |
+          branch="auto_build_and_bump"
+          message="build(deps): bump all dependencies and devDependencies version"
+          body=$(printf "## Changes File\n\n\`\`\`diff\n$(git diff)\n\`\`\`\n\n> Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>")
+          if (( ${#body} >= 65000 )); then
+            body="⚠️ The text diff is too longer, [view changes](https://github.com/BarudakRosul/textwrap/pull/${{ github.event.number }}/files)."
+          fi
+          if [[ "$(git status --porcelain)" != "" ]]; then
+            git branch -D ${branch} || true
+            git checkout -b ${branch}
+            git add package.json package-lock.json
+            git commit --message "${message}"
+            git remote add origin-${branch} "https://github.com/BarudakRosul/textwrap.git"
+            git push --force --quiet --set-upstream origin-${branch} ${branch}
+            gh pr create --title "${message}" --body "${body}"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

@@ -1,0 +1,54 @@
+{
+  "name": "@barudakrosul/textwrap",
+  "version": "1.0.0",
+  "description": "Text wrapping and filling",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Barudak Rosul",
+  "license": "MIT",
+  "types": "./index.d.ts",
+  "engines": {
+    "node": ">=12"
+  },
+  "dependencies": {
+    "@barudakrosul/expand-tabs": "^0.0.1",
+    "@barudakrosul/split-lines": "^0.0.2",
+    "@barudakrosul/translate": "^0.0.2"
+  },
+  "devDependencies": {
+    "assert": "^2.1.0",
+    "mocha": "^10.7.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarudakRosul/textwrap.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "keywords": [
+    "textwrap",
+    "wrap",
+    "fill",
+    "shorten",
+    "dedent",
+    "indent",
+    "wrapped",
+    "filled",
+    "dedented",
+    "indented",
+    "textwrapped",
+    "wrap-text",
+    "text-wrap"
+  ],
+  "bugs": {
+    "url": "https://github.com/BarudakRosul/textwrap/issues"
+  },
+  "homepage": "https://github.com/BarudakRosul/textwrap#readme",
+  "funding": {
+    "url": "https://ko-fi.com/barudakrosul"
+  }
+}
