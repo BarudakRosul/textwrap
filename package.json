@@ -13,7 +13,7 @@
     "node": ">=12"
   },
   "dependencies": {
-    "@barudakrosul/expand-tabs": "^0.0.1",
+    "@barudakrosul/expand-tabs": "^0.0.2",
     "@barudakrosul/split-lines": "^0.0.2",
     "@barudakrosul/translate": "^0.0.2"
   },
