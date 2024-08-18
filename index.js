@@ -101,7 +101,7 @@ class TextWrapper {
       "g"
     );
 
-    // This is not locale- or charset-aware -- string.toLowerCase()
+    // This is not locale- or charset-aware -- String.toLowerCase()
     // is US-ASCII only (and therefore English-only)
     this.sentence_end_re = new RegExp(
       "[a-z][\\.\\!\\?][\\\"\\']?\\Z",
@@ -394,7 +394,7 @@ class TextWrapper {
   /**
    * Reformat the single paragraph in 'text' so it fits in lines of
    * no more than 'this.width' columns, and return a list of wrapped
-   * lines. Tabs in 'text' are expanded with string.expandTabs(),
+   * lines. Tabs in 'text' are expanded with String.expandTabs(),
    * and all other whitespace characters (including newline) are
    * converted to space.
    *
@@ -429,7 +429,7 @@ class TextWrapper {
  *
  * Reformat the single paragraph in 'text' so it fits in lines of no
  * more than 'width' columns, and return a list of wrapped lines. By
- * default, tabs in 'text' are expanded with string.expandTabs(), and
+ * default, tabs in 'text' are expanded with String.expandTabs(), and
  * all other whitespace characters (including newline) are converted to
  * space. See TextWrapper class for available keyword args to customize
  * wrapping behaviour.
