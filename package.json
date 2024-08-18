@@ -1,6 +1,6 @@
 {
   "name": "@barudakrosul/textwrap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Text wrapping and filling",
   "main": "index.js",
   "scripts": {
@@ -47,7 +47,7 @@
   "bugs": {
     "url": "https://github.com/BarudakRosul/textwrap/issues"
   },
-  "homepage": "https://github.com/BarudakRosul/textwrap#readme",
+  "homepage": "https://barudakrosul.github.io/textwrap/",
   "funding": {
     "url": "https://ko-fi.com/barudakrosul"
   }
