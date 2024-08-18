@@ -1,0 +1,158 @@
+# Configuration
+baseURL: "https://barudakrosul.github.io/textwrap/"
+title: "TextWrap JavaScript"
+
+enableRobotsTXT: true
+enableGitInfo: true
+# enableEmoji: false
+hasCJKLanguage: true
+
+# services:
+#   googleAnalytics:
+#     ID: G-MEASUREMENT_ID
+
+outputs:
+  home: [HTML]
+  page: [HTML]
+  section: [HTML, RSS]
+
+defaultContentLanguage: id
+languages:
+  id:
+    languageName: Indonesia
+    weight: 1
+    title: TextWrap
+  en:
+    languageName: English
+    languageCode: en
+    weight: 2
+    title: TextWrap
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.112.0"
+
+  workspace: hugo.work
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+enableInlineShortcodes: true
+
+menu:
+  main:
+    - identifier: documentation
+      name: Dokumentasi
+      pageRef: /docs
+      weight: 1
+    - identifier: about
+      name: Tentang
+      pageRef: /about
+      weight: 2
+    - name: Cari
+      weight: 3
+      params:
+        type: search
+    - name: GitHub
+      weight: 4
+      url: "https://github.com/BarudakRosul/textwrap"
+      params:
+        icon: github
+
+  sidebar:
+    - identifier: more
+      name: Lainnya
+      params:
+        type: separator
+      weight: 1
+    - identifier: contact
+      name: "Kontak ↗"
+      url: "/contact"
+      weight: 2
+
+params:
+  description: Text wrapping and filling.
+
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: images/logo.svg
+      dark: images/logo-dark.svg
+      # width: 40
+      # height: 20
+      # link: /
+    width: wide
+
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: normal
+
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+
+  footer:
+    enable: true
+    displayCopyright: true
+    displayPoweredBy: false
+    width: normal
+
+  displayUpdatedDate: true
+  dateFormat: "2 January 2006"
+
+  # Search
+  # flexsearch is enabled by default
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+      # full | forward | reverse | strict
+      # https://github.com/nextapps-de/flexsearch/#tokenizer-prefix-search
+      tokenize: forward
+
+  editURL:
+    enable: true
+    base: "https://github.com/BarudakRosul/textwrap/edit/master/sites/content"
+
+  blog:
+    list:
+      displayTags: true
+      # date | lastmod | publishDate | title | weight
+      sortBy: date
+      sortOrder: desc # or "asc"
+
+  highlight:
+    copy:
+      enable: true
+      # hover | always
+      display: hover
+
+  comments:
+    enable: false
+    type: giscus
+
+    # https://giscus.app/
+    giscus:
+      repo: imfing/hextra
+      repoId: R_kgDOJ9fJag
+      category: General
+      categoryId: DIC_kwDOJ9fJas4CY7gW
+      # mapping: pathname
+      # strict: 0
+      # reactionsEnabled: 1
+      # emitMetadata: 0
+      # inputPosition: top
+      # lang: en
+publishDir: ../public
