@@ -32,7 +32,7 @@
  * @param {number | null} max_lines - Truncate wrapped lines (default: null).
  * @param {string} placeholder - Append to the last line of truncated text (default: ' [...]').
  */
-export interface TextWrapperOptions {
+declare interface TextWrapperOptions {
   width?: number;
   initial_indent?: string;
   subsequent_indent?: string;
@@ -53,7 +53,7 @@ export interface TextWrapperOptions {
  * @param {string} lines - The input string to be evaluated by the predicate.
  * @returns {boolean} - The result of the predicate evaluation.
  */
-export interface Predicate {
+declare interface Predicate {
   (lines: string) => boolean;
 }
 
@@ -64,7 +64,7 @@ export interface Predicate {
  * If you want to completely replace the main wrapping algorithm,
  * you'll probably have to override _wrap_chunks().
  */
-class TextWrapper {
+declare class TextWrapper {
   constructor(options?: TextWrapperOptions);
 
   /**
@@ -98,7 +98,7 @@ class TextWrapper {
  * @param {TextWrapperOptions} options - Additional options.
  * @return {Array<string>} - The wrapped text.
  */
-function wrap(text: string, width?: number, options?: TextWrapperOptions): Array<string>;
+declare function wrap(text: string, width?: number, options?: TextWrapperOptions): Array<string>;
 
 /**
  * Fill a single paragraph of text, returning a new string.
@@ -108,7 +108,7 @@ function wrap(text: string, width?: number, options?: TextWrapperOptions): Array
  * @param {TextWrapperOptions} options - Additional options.
  * @return {string} - The filled text.
  */
-function fill(text: string, width?: number, options?: TextWrapperOptions): string;
+declare function fill(text: string, width?: number, options?: TextWrapperOptions): string;
 
 /**
  * Collapse and truncate the given text to fit in the given width.
@@ -118,7 +118,7 @@ function fill(text: string, width?: number, options?: TextWrapperOptions): strin
  * @param {TextWrapperOptions} options - Additional options.
  * @return {string} - The shortened text.
  */
-function shorten(text: string, width: number, options?: TextWrapperOptions): string;
+declare function shorten(text: string, width: number, options?: TextWrapperOptions): string;
 
 /**
  * Remove any common leading whitespace from every line in `text`.
@@ -127,7 +127,7 @@ function shorten(text: string, width: number, options?: TextWrapperOptions): str
  * @param {string} text - The input text to be dedented.
  * @return {string} - The dedented text.
  */
-function dedent(text: string): string;
+declare function dedent(text: string): string;
 
 /**
  * Adds 'prefix' to the beginning of selected lines in 'text'.
@@ -138,9 +138,9 @@ function dedent(text: string): string;
  *                                (default: null).
  * @returns {string} - The indented text.
  */
-function indent(text: string, prefix: string, predicate?: Predicate | null): string;
+declare function indent(text: string, prefix: string, predicate?: Predicate | null): string;
 
-const textwrap = { TextWrapper, wrap, fill, shorten, dedent, indent };
+export const textwrap = { TextWrapper, wrap, fill, shorten, dedent, indent };
 
 // Exports module
 export { TextWrapper, wrap, fill, shorten, dedent, indent };
