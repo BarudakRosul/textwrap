@@ -140,7 +140,7 @@ declare function dedent(text: string): string;
  */
 declare function indent(text: string, prefix: string, predicate?: Predicate | null): string;
 
-export const textwrap = { TextWrapper, wrap, fill, shorten, dedent, indent };
+declare const textwrap: { TextWrapper: typeof TextWrapper; wrap: typeof wrap; fill: typeof fill; shorten: typeof shorten; dedent: typeof dedent; indent: typeof indent };
 
 // Exports module
 export { TextWrapper, wrap, fill, shorten, dedent, indent };
