@@ -39,10 +39,4 @@ const textwrap = require("@barudakrosul/textwrap");
 import textwrap from "@barudakrosul/textwrap";
 ```
 
-### TypeScript
-
-```typescript
-import textwrap from "@barudakrosul/textwrap";
-```
-
 {{% /steps %}}
