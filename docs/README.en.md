@@ -64,11 +64,6 @@ const textwrap = require("@barudakrosul/textwrap");
 import textwrap from "@barudakrosul/textwrap";
 ```
 
-**3\. TypeScript**
-```typescript
-import textwrap from "@barudakrosul/textwrap";
-```
-
 Example of usage:
 
 ### Wrap Text
