@@ -32,7 +32,7 @@
  * @param {number | null} max_lines - Truncate wrapped lines (default: null).
  * @param {string} placeholder - Append to the last line of truncated text (default: ' [...]').
  */
-declare interface TextWrapperOptions {
+interface TextWrapperOptions {
   width?: number;
   initial_indent?: string;
   subsequent_indent?: string;
@@ -53,8 +53,8 @@ declare interface TextWrapperOptions {
  * @param {string} lines - The input string to be evaluated by the predicate.
  * @returns {boolean} - The result of the predicate evaluation.
  */
-declare interface Predicate {
-  (lines: string): => boolean;
+interface Predicate {
+  (lines: string): boolean;
 }
 
 /**
