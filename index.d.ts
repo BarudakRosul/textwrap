@@ -54,7 +54,7 @@ declare interface TextWrapperOptions {
  * @returns {boolean} - The result of the predicate evaluation.
  */
 declare interface Predicate {
-  (lines: string) => boolean;
+  (lines: string): => boolean;
 }
 
 /**
