@@ -1,6 +1,6 @@
 {
   "name": "@barudakrosul/textwrap",
-  "version": "0.0.3-1",
+  "version": "0.0.3-2",
   "description": "Text wrapping and filling",
   "main": "index.js",
   "scripts": {
