@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "assert": "^2.1.0",
-    "mocha": "^10.7.3"
+    "mocha": "^10.8.2"
   },
   "repository": {
     "type": "git",
