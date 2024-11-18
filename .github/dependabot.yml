@@ -17,5 +17,5 @@ updates:
       interval: weekly
     open-pull-requests-limit: 100
     commit-message:
-      prefix: "build(deps)"
-      prefix-development: "build(deps-dev)"
+      prefix: "ci(deps)"
+      prefix-development: "ci(deps-dev)"
